@@ -27,7 +27,6 @@ app.use('/api',Router);
 try {
     mongoose.connect(localServer, () => {
         const port = process.env.PORT || process.env.API_PORT;
-        worker();
         console.log(`Starting server at ${new Date()}` + port);
         app.listen(port);
     });
