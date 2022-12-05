@@ -16,7 +16,7 @@ require('dotenv').config();
 app.use(cors());
 
 //Constant
-const localServer = process.env.MONGO_URI;
+const localServer = "mongodb://user:leolucard4821@ac-prg0try-shard-00-00.aafstkw.mongodb.net:27017,ac-prg0try-shard-00-01.aafstkw.mongodb.net:27017,ac-prg0try-shard-00-02.aafstkw.mongodb.net:27017/allkarpro?replicaSet=atlas-78xuu7-shard-0&ssl=true&authSource=admin";
 
 //Routes
 app.use('/api',Router);
@@ -24,7 +24,7 @@ app.use('/api',Router);
 
 //App start
 try {
-    mongoose.connect('mongodb://localhost:27017/allkarpro', () => {
+    mongoose.connect(localServer, () => {
         const port = process.env.PORT || process.env.API_PORT;
         console.log(`Starting server at ${new Date()}` + port);
         app.listen(port);
