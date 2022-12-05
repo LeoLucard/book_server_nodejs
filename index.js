@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 
 //Custom Import
 const Router = require('./routes/book_route');
+const {worker} = require('./helper/auto_worker');
 
 //Express App
 const app = express();
@@ -26,6 +27,7 @@ app.use('/api',Router);
 try {
     mongoose.connect(localServer, () => {
         const port = process.env.PORT || process.env.API_PORT;
+        worker();
         console.log(`Starting server at ${new Date()}` + port);
         app.listen(port);
     });
