@@ -63,6 +63,17 @@ const createBookController = asyncHandler(async (req,res,next)=>{
     }
 });
 
+//  @desc                   Create Book
+//  @route                  POST /api/books
+//  @access                 PRIVATE
+const deleteBook = asyncHandler(async(req,res,next)=>{
+    const {id} = req.body;
+
+    const deletedBook = await BookModel.findByIdAndDelete(id);
+
+    res.status(200).json(Response(200,deletedBook));
+})
+
 //  @desc                   CREATE CATEGORY
 //  @route                  POST /api/createCategory
 //  @access                 PRIVATE
@@ -107,4 +118,6 @@ const getAllCategory = asyncHandler(async(req,res,next) => {
     res.status(200).json(Response(200,categoryList));
 })
 
-module.exports = { getBooksController , createBookController , getAllCategory , createCategory , deleteCategory};
+module.exports = { getBooksController , createBookController , getAllCategory ,
+    createCategory , deleteCategory , deleteBook
+};
