@@ -18,6 +18,7 @@ app.use(cors());
 
 //Constant
 const localServer = "mongodb://user:leolucard4821@ac-prg0try-shard-00-00.aafstkw.mongodb.net:27017,ac-prg0try-shard-00-01.aafstkw.mongodb.net:27017,ac-prg0try-shard-00-02.aafstkw.mongodb.net:27017/allkarpro?replicaSet=atlas-78xuu7-shard-0&ssl=true&authSource=admin";
+// const localServer = "mongodb://localhost:27017/allkarpro";
 
 //Routes
 app.use('/api',Router);
