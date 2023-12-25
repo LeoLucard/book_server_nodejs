@@ -17,7 +17,7 @@ require('dotenv').config();
 app.use(cors());
 
 //Constant
-const localServer = "mongodb://localhost:27017/allkarpro";
+const localServer = "mongodb://localhost:27017/yourserver";
 
 //Routes
 app.use('/api',Router);
